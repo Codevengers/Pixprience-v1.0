@@ -3,7 +3,7 @@
   var bodyParser = require("body-parser");
   var exphbs = require("express-handlebars");
   var app = express();
-  var port = process.env.PORT || 8080;
+  var port = process.env.PORT || 3000;
 
   // Requiring our models for syncing
   var db = require("./models");
@@ -25,6 +25,7 @@
   // Routes
   // =============================================================
   require("./controllers/loginController.js")(app);
+  require("./controllers/photoController.js")(app);
 
   // Syncing our sequelize models and then starting our Express app
   // =============================================================

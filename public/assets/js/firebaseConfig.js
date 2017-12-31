@@ -8,7 +8,6 @@ var config = {
   messagingSenderId: "706748982586"
 };
 
-
 firebase.initializeApp(config);
 console.log("Firebase config initialized ...");
 // Firebase Upload Files
