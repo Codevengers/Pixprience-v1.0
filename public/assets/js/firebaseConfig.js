@@ -8,10 +8,10 @@ var config = {
   messagingSenderId: "706748982586"
 };
 
+
 firebase.initializeApp(config);
-
+console.log("Firebase config initialized ...");
 // Firebase Upload Files
-let upload = document.getElementById('file-input');
-console.log("Upload is : "+ upload);
-
-upload.addEventListener('change', uploadToFirebase, false);
+// let upload = document.getElementById('file-input');
+// // console.log("Upload is : "+ upload);
+// upload.addEventListener('change', uploadToFirebase, false);

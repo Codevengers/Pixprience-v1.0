@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Timeline</title>
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.1/themes/fontawesome-stars.min.css">
@@ -11,112 +12,224 @@
  	<link type="text/css" rel="stylesheet" href="./assets/materialize/css/materialize.css"  media="screen,projection"/>
   <link rel="stylesheet" href="assets/css/timeline.css">
   <link rel="stylesheet" href="assets/css/modal.css">
+
   <!-- Scripts -->
-  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/js/firebaseConfig.js"></script>
-  <script type="text/javascript" src="assets/js/firebase.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+</script>
+
+ 
+  
 </head>
-<script>
+
+<!-- <script>
 // Redirects TimeLine back to Login Page if User is not Signed In.
   var userID = sessionStorage.getItem("sessionID");
   if(userID === null){
     console.log("Redirecting because");
     window.location.replace("/");
   }
-</script>
+</script> -->
 
 <body>
   <section class="intro">
-    <div>
-      <button class="modal-trigger" href="#imageUploadModal">Upload</button>
-    </div>
-  <div class="container">
-    <img src="assets/img/user1.jpg" class="user">
-    <h1>Your Timeline &darr;</h1>
-  </div>
-</section>
 
-<section class="timeline">
-  <ul class="ulTimeline">
-  </ul>
-</section>
+   <!--  <div>
+      <button class="modal-trigger" href="#imageUploadModal">Upload</button>
+    </div> -->
+
+    <div class="container">
+      <img src="assets/img/user1.jpg" class="user">
+      <h1>Your Timeline &darr;</h1>
+    </div>
+
+  </section>
+
+  <section class="timeline">
+    <ul class="ulTimeline">
+    </ul>
+  </section>
 
 <!-- Modals -->
+
 <!-- Image Model -->
-<div id="myModal" class="modal">
-  <select id="example">
-     <option value="1">1</option>
-     <option value="2">2</option>
-     <option value="3">3</option>
-     <option value="4">4</option>
-     <option value="5">5</option>
-  </select>
+  <div id="myModal" class="modal">
+    <select class="example">
+       <option value="1">1</option>
+       <option value="2">2</option>
+       <option value="3">3</option>
+       <option value="4">4</option>
+       <option value="5">5</option>
+    </select>
 
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modalImg">
-  <div id="caption"><p></p></div>
-</div>
-
-<!-- Drop Down Form Modal -->
-
-<!-- Modal Structure -->
-<div id="imageUploadModal" class="modal imageUploadModal green-text">
- <div class="modal-content">
-   <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <!-- Image Upload -->
-        <div class="image-upload col s12">
-            <label for="file-input">
-                <span class="attach-doc">Upload an Image &nbsp;<i class="fa fa-upload" aria-hidden="true"></i></span>
-            </label>
-            <script type="text/javascript" src="assets/js/firebase.js"></script>
-            <input id="file-input" type="file" onchange="uploadToFirebase(this.files)" />
-        </div>
-
-        <div class="input-field col s12">
-          <i class="material-icons prefix">speaker_notes</i>
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Textarea</label>
-        </div>
-
-        <!-- Image Field -->
-        <!-- Notes Input Field -->
-        <div class="input-field col s12">
-          <i class="material-icons prefix">phone</i>
-          <input id="icon_telephone" type="tel" class="validate">
-          <label for="icon_telephone">Telephone</label>
-        </div>
-        <!-- Favourites Field -->
-        <!-- Location Field -->
-      </div>
-    </form>
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div id="caption"><p></p></div>
   </div>
- </div>
-</div>
 
+  <!-- Drop Down Form Modal -->
+ 
 
+  <!-- Modal Structure -->
+  <div id="imageUploadModal" class="modal imageUploadModal green-text">
 
+    <div class="modal-content">
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+          
+          <div class="image-to-show col s6">
+            <img id="image-preview" src="http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png" style="max-width:310px; max-height:310px;"  alt="broken">
+            
+             <script type="text/javascript">
+                $("#image-preview").click(function(){
+                  $("#rating").show("slow");
+                });
+              </script>
+
+            <div id="rating" style="display: none">
+              <select id="example">
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+              </select>
+            </div>
+            
+          </div>
+
+          <!-- Image Upload -->
+          <div class="image-upload col s12">
+            <label for="file-input">
+              <span class="attach-doc">Upload an Image &nbsp;<i class="fa fa-upload" aria-hidden="true"></i></span>
+            </label>
+            <input id="file-input" type="file"  />
+          </div>
+
+         <!--  <div class="input-field col s12">
+            <i class="material-icons prefix">Notes</i>
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <! <label for="textarea1">Textarea</label> -->
+         <!--  </div>  -->
+
+          <!-- Image Field -->
+          <!-- Notes Input Field -->
+          <div class="input-field col s12">
+            <i class="material-icons prefix">Notes</i>
+            <input id="icon_telephone" type="tel" class="validate">
+            <!-- <label for="icon_telephone">Telephone</label> -->
+          </div>
+          <!-- Favorites Field -->
+          <!-- Location Field -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
 <!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous">
+
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.1/jquery.barrating.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+<script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js">   
 </script>
 
-<script type="text/javascript" src="assets/js/timeline.js"></script>
-<script type="text/javascript" src="assets/js/modal.js"></script>
-<script type="text/javascript" src="./assets/materialize/js/materialize.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.1/jquery.barrating.min.js"></script>
-<script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+</script> -->
+<!-- <script>
+  function uploadToFirebase(files) {
+    let file = files[0];
+    let fileName = file.name;
+    if (file) {
+        let rootRef = firebase.storage().ref();
+        let fileRef = rootRef.child(`images/${fileName}`);
+        fileRef.put(file)
+            .then(() => {
+                console.log("file successfully uploaded!");
+            })
+            .catch(err => console.log(err));
+        fileRef.getDownloadURL()
+            .then((url) => {
+                //Getting the download url.
+                console.log(`Download Url : ${url}`);
+                    // test-image: "http://www.wildaid.org/sites/default/files/iStock_000011369650Large.jpg
+            })
+            .catch(err => console.log(err));
+    }
+ }
+</script> -->
+<script type="text/javascript" src="assets/js/uploadfirebase.js">
+</script>
+
+<script type="text/javascript" src="assets/js/firebaseConfig.js">
+</script>
+
+<script type="text/javascript" src="assets/js/uploadfirebase.js">
+</script>
+
+
+
+
+<script type="text/javascript">
+ //  function uploadToFirebase(files) {
+ //    let file = files[0];
+ //    let fileName = file.name;
+ //    if (file) {
+ //        let rootRef = firebase.storage().ref();
+ //        let fileRef = rootRef.child(`images/${fileName}`);
+ //        fileRef.put(file)
+ //            .then(() => {
+ //                console.log("file uploaded with success congrats");
+ //            })
+ //            .catch(err => console.log(err));
+ //        fileRef.getDownloadURL()
+ //            .then((url) => {
+ //                //Getting the download url.
+ //                console.log(`Download Url : ${url}`);
+ //            })
+ //            .catch(err => console.log(err));
+ //    }
+ // }
+//   let upload = document.getElementById('file-input');
+// // console.log("Upload is : "+ upload);
+//     upload.addEventListener('change', uploadToFirebase, false);
+
+  var input = document.getElementById('file-input');
+  input.onchange = 
+  function(){
+    // console.log(this.files);
+    // console.log(uploadToFirebase);
+    // console.log(name);
+    // name();
+    uploadToFirebase(this.files);
+
+  }
+</script>
+
+<script type="text/javascript" src="assets/js/modal.js">
+</script>
+
+<script type="text/javascript" src="assets/js/timeline.js">
+</script>
+
+<script type="text/javascript" src="assets/materialize/js/materialize.min.js">
+</script>
+
+<script type="text/javascript">
   $(function() {
     $('#example').barrating({
       theme: 'fontawesome-stars'
     });
   });
-
 </script>
+
 
 </body>
 </html>

@@ -11,21 +11,23 @@ module.exports = function(app) {
 
   /////////////////////////////////////////////// /* Get Routes */ ////////////////////////////////////////////////////////
 
-  app.get("/:path?", function(req,res){
+  app.get("/:path", function(req,res){
 
     // Store Current Path
     var currentPath = req.params.path;
-
+    console.log(currentPath)
     // Switch Statement for Get Paths
     switch(currentPath){
       case "timeline":
         console.log("Sending TimeLine URL");
         res.send("/timeline.html");
         break;
-      case "timeline.html":
+
+      case "timeline2":
         console.log("Time Line Path Hit");
         res.sendFile(path.join(__dirname, "../views/timeline.html"));
         break;
+
       // Default for all Invalid Paths is the homepage
       default:
         console.log("Root Path Hit");

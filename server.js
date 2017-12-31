@@ -14,20 +14,17 @@
   app.use(bodyParser.text());
   app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-
   // Set Handlebars as the default templating engine.
   app.engine("handlebars", exphbs({ defaultLayout: "main" }));
   app.set("view engine", "handlebars");
 
-
   // Serve static content for the app from the "public" directory in the application directory.
   app.use(express.static("public"));
-  app.use(express.static("views"));
+  // app.use(express.static("views"));
+  
   // Routes
   // =============================================================
   require("./controllers/loginController.js")(app);
-
-
 
   // Syncing our sequelize models and then starting our Express app
   // =============================================================
