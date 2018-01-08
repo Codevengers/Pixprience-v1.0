@@ -61,11 +61,6 @@ body {
   padding-top: 100px;
   height: 20vh;
   position: relative;
-  overflow-x: hidden;
-  /* display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 10fr;
-  grid-template-areas: "header" "mainSection"; */
 }
 
 .container {
