@@ -42,7 +42,7 @@
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJQ__z06-Y3H9TYepxUNOicjA-CEwGJsw&callback=initMap"></script>
 </head>
 
-<body class="animated zoomIn delay-2" id ="bg1">
+<body class="animated zoomIn delay-2" id ="bg1" style="position: relative;">
   <section class="intro">
       <div class="uploadWrapper">
         <button class="modal-trigger" id="uploadBtn" href="#imageUploadModal"><i class="material-icons medium cloud">cloud_upload</i></button>
@@ -60,7 +60,7 @@
 
 
 <!-- Time Line Image Model -->
-  <div id="myModal" class="modal">
+  <div id="myModal" class="modal" style= "position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-height: 55vh;">
     <div id="map" style = "position: absolute;"></div>
     <span class="close">&times;</span>
   </div>
@@ -69,7 +69,7 @@
 
 <!-- Drop Down Form Modal -->
   <!-- Modal Structure -->
-  <div id="imageUploadModal" class="modal imageUploadModal green-text">
+  <div id="imageUploadModal" class="modal imageUploadModal green-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-height: 55vh;">
 
     <div class="modal-content">
       <form class="col s12">
