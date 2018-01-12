@@ -41,7 +41,7 @@ function uploadToFirebase(files) {
           var longitudeRef = EXIF.getTag(this, "GPSLongitudeRef");
 
           // Format the Raw Long and Lat into Decimal Geo Coordinates
-          if(latitude[0]){
+          if(latitude[0] != "undefined"){
             var formattedLatitude = parseFloat(latitude[0]) + (parseFloat(latitude[1])/ 60.00)+ (parseFloat(latitude[2])/3600.0);
             var formattedLongitude = parseFloat(longitude[0]) + (parseFloat(longitude[1])/ 60.00)+ (parseFloat(longitude[2])/3600.0);
           } else {
