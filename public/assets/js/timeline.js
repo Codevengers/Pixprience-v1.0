@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
   $('#imageUploadModal').modal();
+  $('#myModal').modal();
+
 
   function scrollEvent() {
     console.log("Scroll Event Function is Running");

@@ -1862,8 +1862,8 @@ if (Vel) {
     ready: undefined,
     complete: undefined,
     dismissible: true,
-    startingTop: '4%',
-    endingTop: '10%'
+    startingTop: '1%',
+    endingTop: '3%'
   };
 
   /**

@@ -40,13 +40,15 @@ function uploadToFirebase(files) {
           var latitudeRef = EXIF.getTag(this, "GPSLatitudeRef");
           var longitudeRef = EXIF.getTag(this, "GPSLongitudeRef");
 
+          console.log(latitude);
+
           // Format the Raw Long and Lat into Decimal Geo Coordinates
-          if(latitude[0] != "undefined"){
+          if(latitude !== undefined){
             var formattedLatitude = parseFloat(latitude[0]) + (parseFloat(latitude[1])/ 60.00)+ (parseFloat(latitude[2])/3600.0);
             var formattedLongitude = parseFloat(longitude[0]) + (parseFloat(longitude[1])/ 60.00)+ (parseFloat(longitude[2])/3600.0);
           } else {
-            var formattedLatitude = latitude;
-            var formattedLongitude = longitude;
+            var formattedLatitude = -41.8781;
+            var formattedLongitude = 87.6298;
           }
 
 
@@ -69,8 +71,8 @@ function uploadToFirebase(files) {
               title: $("#imageUploadTitles").val(),
               rating: $(".br-current-rating").text(),
               notes: $("#uploadNotes").val(),
-              latitude: null,
-              longtitude: null
+              latitude: formattedLatitude,
+              longtitude: formattedLongitude
             };
 
           // Send the Image Object to the Backend for Storage in DB Using Sequelize
