@@ -21,9 +21,9 @@ export default StyleSheet.create({
     // Location of the box
     left: [{ unit: 'px', value: 0 }],
     top: [{ unit: '%V', value: 0.02 }],
-    width: [{ unit: '%H', value: 0.5 }],
+    width: [{ unit: '%H', value: 0.9 }],
     // Full width
-    height: [{ unit: '%V', value: 1 }],
+    height: [{ unit: 'vh', value: 60 }],
     // Full height
     overflow: 'auto',
     // Enable scroll if needed

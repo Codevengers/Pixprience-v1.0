@@ -251,7 +251,7 @@ export default StyleSheet.create({
   // Map
   '#map': {
     width: [{ unit: '%H', value: 1 }],
-    height: [{ unit: '%V', value: 0.9 }],
+    height: [{ unit: '%V', value: 1 }],
     padding: [{ unit: 'px', value: 0 }, { unit: 'string', value: '!important' }, { unit: 'px', value: 0 }, { unit: 'string', value: '!important' }],
     margin: [{ unit: 'px', value: 0 }, { unit: 'string', value: '!important' }, { unit: 'px', value: 0 }, { unit: 'string', value: '!important' }],
     borderRadius: '0',
